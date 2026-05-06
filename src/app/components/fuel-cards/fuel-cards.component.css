@@ -1,0 +1,75 @@
+.ranges-container {
+  margin-bottom: 40px;
+}
+
+.line-header {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.line-header hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 2x3 Grid Implementation */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+}
+
+.range-card {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+/* Hover Effect for Cards */
+.range-card:hover {
+  border-color: var(--accent-black);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.price-row {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+
+.brand-link {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.range-card:hover .brand-link {
+  color: var(--accent-black);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr 1fr; } /* 2 columns on tablets */
+}

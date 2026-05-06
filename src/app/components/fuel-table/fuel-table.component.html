@@ -1,0 +1,30 @@
+<div class="table-section">
+    <div class="line-header"><STRong>§ PRICES BY BRAND </STRong><hr></div>
+  <div class="table-controls">
+    <div class="tabs">
+      @for (t of types; track t) {
+        <button [class.active]="selected() === t" (click)="select(t)">{{t}}</button>
+      }
+    </div>
+    <button class="sort-btn" (click)="toggleSort()">
+      {{ isAscending() ? '↑ PRICE: LOW TO HIGH' : '↓ PRICE: HIGH TO LOW' }}
+    </button>
+  </div>
+
+  <table class="brand-table">
+    <thead>
+      <tr>
+        <th align="left">BRAND</th>
+        <th align="right">PRICE/L</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of sortedData(); track row.brand) {
+        <tr>
+          <td>{{row.brand}}</td>
+          <td align="right" class="bold-price">₱{{row.price.toFixed(2)}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

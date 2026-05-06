@@ -1,0 +1,35 @@
+<div class="calc-box">
+  <div class="sidebar-title">TRIP COST CALCULATOR</div>
+
+  <form [formGroup]="calcForm" (ngSubmit)="calc()">
+    <div class="field">
+      <label>DISTANCE (KM)</label>
+      <input type="number" formControlName="dist">
+    </div>
+
+    <div class="field">
+      <label>FUEL EFFICIENCY (KM/L)</label>
+      <input type="number" formControlName="eff">
+    </div>
+
+    <div class="field">
+      <label>FUEL TYPE & PRICE</label>
+      <select formControlName="fuelPrice" class="fuel-select">
+        @for (fuel of fuels; track fuel.name) {
+          <option [value]="fuel.price">
+            {{ fuel.name }} - avg ₱{{ fuel.price.toFixed(2) }}/L
+          </option>
+        }
+      </select>
+    </div>
+
+    <button type="submit" class="calc-btn">CALCULATE</button>
+  </form>
+
+  @if (total > 0) {
+    <div class="result">
+      <small>ESTIMATED COST</small>
+      <div class="price">₱{{ total.toFixed(2) }}</div>
+    </div>
+  }
+</div>

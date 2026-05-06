@@ -1,0 +1,12 @@
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Table takes left, Calculator takes fixed right */
+  gap: 50px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+aside {
+  position: sticky;
+  top: 20px; /* Keeps calculator visible while scrolling long tables */
+}

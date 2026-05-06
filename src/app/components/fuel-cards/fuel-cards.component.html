@@ -1,0 +1,16 @@
+<section class="ranges-container">
+  <div class="line-header">§ WEEKLY RANGES <hr></div>
+  <div class="card-grid">
+    @for (f of fuels; track f.name) {
+      <div class="range-card" (click)="selectType(f.name)">
+        <span class="label">{{f.name}}</span>
+        <div class="price-row">
+          <span class="val">₱{{f.priceMin}}</span>
+          <span class="line">-</span>
+          <span class="val">₱{{f.priceMax}}</span>
+        </div>
+        <a class="brand-link">View by brand →</a>
+      </div>
+    }
+  </div>
+</section>
