@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FuelService } from '../../services/fuel.service';
-import { ThemeService } from '../../services/theme.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,5 +12,5 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class HeaderComponent {
   market = inject(FuelService).marketData;
-  theme = inject(ThemeService);
+
 }

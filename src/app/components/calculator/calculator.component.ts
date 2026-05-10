@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FuelService } from '../../services/fuel.service';
 
 @Component({
   selector: 'app-calculator',
@@ -11,6 +12,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 })
 export class CalculatorComponent {
   private fb = inject(FormBuilder);
+  private fuelService = inject(FuelService);
   
   fuels = [
     { name: 'Unleaded 91', price: 97.14 },
@@ -21,8 +23,8 @@ export class CalculatorComponent {
   ];
 
   calcForm = this.fb.nonNullable.group({
-    dist: [0, [Validators.required]],
-    eff: [0, [Validators.required]],
+    dist: [0, [Validators.required, Validators.min(1)]],
+    eff: [1, [Validators.required, Validators.min(0.1)]],
     fuelPrice: [97.14, [Validators.required]]
   });
 
@@ -30,8 +32,24 @@ export class CalculatorComponent {
 
   calc() {
     const { dist, eff, fuelPrice } = this.calcForm.getRawValue();
+    
     if (dist > 0 && eff > 0) {
       this.total = (dist / eff) * fuelPrice;
+
+      const selectedFuel = this.fuels.find(f => +f.price === +fuelPrice);
+      
+      const record = {
+        fuelType: selectedFuel ? selectedFuel.name : 'Fuel Update',
+        distance: dist,
+        consumption: eff,
+        totalCost: this.total
+      };
+
+      this.fuelService.saveCalculation(record).subscribe({
+        next: () => {
+          this.fuelService.fetchHistory();
+        }
+      });
     }
   }
 }

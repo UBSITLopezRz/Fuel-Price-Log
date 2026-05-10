@@ -1,0 +1,159 @@
+:host {
+  display: block;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.info-container {
+  max-width: 1200px;
+}
+
+header{
+    text-align: left;
+    color: #1a1a1a;
+    font-size: 17px;
+}
+
+header small {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #000000;
+  font-family: 'Inter', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+header small::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+header h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 20px 0 5px 0;
+  letter-spacing: -1px;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+  align-items: start;
+}
+
+.intro-callout {
+  border-left: 4px solid #E63946;
+  padding: 5px 0 5px 30px;
+  margin: 0 0 45px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordion-item:hover { border-color: #ddd; }
+.accordion-item.open { border-color: #E63946; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+.item-header {
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.chevron { 
+    font-size: 1.2rem; 
+    color: #bbb; 
+    transition: 0.3s; 
+}
+
+.chevron.rotated { 
+    transform: rotate(180deg); 
+    color: #E63946; 
+}
+
+.item-body {
+  padding: 0 28px 25px 28px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.reference-card {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.reference-card h4 {
+  color: #E63946;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.ref-sub { 
+    font-weight: 800; 
+    font-size: 1.1rem; 
+    margin-bottom: 25px; 
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat-box {
+  background: white;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.stat-box label {
+  display: block;
+  font-size: 0.65rem;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stat-box .value { 
+    font-weight: 800; 
+    font-size: 1.2rem; 
+}
+
+.stat-box small { 
+    font-size: 0.75rem; 
+    color: #666; 
+    margin-left: 2px; 
+}

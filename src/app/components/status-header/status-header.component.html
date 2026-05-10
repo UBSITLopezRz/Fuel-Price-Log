@@ -1,0 +1,18 @@
+<div class="status-wrapper">
+  <div class="title-section">
+    <h1>Philippines fuel prices, updated <span>{{ status().verifiedDate }}</span></h1>
+    <p>{{ status().description }}</p>
+  </div>
+
+  <div class="badge-container">
+    <div class="badge verified">
+      <span class="dot">●</span> VERIFIED {{ status().verifiedDate }}
+    </div>
+    <div class="badge">
+      NEXT UPDATE: {{ status().nextUpdate }}
+    </div>
+    <div class="badge">
+      {{ status().brandCount }} BRANDS TRACKED
+    </div>
+  </div>
+</div>

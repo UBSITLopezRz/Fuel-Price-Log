@@ -1,0 +1,51 @@
+<section class="info-container">
+    
+  <header>
+    <strong><small>§ HOW IT WORKS</small></strong>
+    <h2>{{ content().sectionTitle }}</h2>
+    <p>{{ content().sectionSubtitle }}</p>
+  </header>
+
+  <div class="layout-grid">
+    <div class="content-main">
+      <blockquote class="intro-callout">
+        {{ content().introText }}
+      </blockquote>
+
+      <div class="accordion-list">
+        @for (guide of content().guides; track guide.title; let i = $index) {
+          <div class="accordion-item" [class.open]="activeIndex() === i" (click)="toggleGuide(i)">
+            <div class="item-header">
+              <span>{{ guide.title }}</span>
+              <span class="chevron" [class.rotated]="activeIndex() === i">⌄</span>
+            </div>
+            
+            @if (activeIndex() === i) {
+              <div class="item-body">
+                <p>{{ guide.content }}</p>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <aside class="content-sidebar">
+      <div class="reference-card">
+        <h4>QUICK REFERENCE</h4>
+        <p class="ref-sub">Key numbers to know</p>
+        
+        <div class="stats-grid">
+          @for (stat of content().quickStats; track stat.label) {
+            <div class="stat-box">
+              <label>{{ stat.label }}</label>
+              <div class="value">
+                {{ stat.value }}<small>{{ stat.unit }}</small>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>

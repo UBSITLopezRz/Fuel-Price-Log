@@ -1,5 +1,5 @@
 <div class="table-section">
-    <div class="line-header"><STRong>§ PRICES BY BRAND </STRong><hr></div>
+  <div class="line-header"><strong>§ PRICES BY BRAND </strong><hr></div>
   <div class="table-controls">
     <div class="tabs">
       @for (t of types; track t) {
@@ -23,6 +23,39 @@
         <tr>
           <td>{{row.brand}}</td>
           <td align="right" class="bold-price">₱{{row.price.toFixed(2)}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="line-header" style="margin-top: 40px;">
+    <strong>§ RECENT CALCULATIONS </strong><hr>
+  </div>
+
+  <table class="brand-table history-table">
+    <thead>
+      <tr>
+        <th align="left">FUEL TYPE</th>
+        <th align="right">TOTAL COST</th>
+        <th align="center">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (record of fuelService.history(); track record._id) {
+        <tr>
+          <td>{{record.fuelType}}</td>
+          <td align="right" class="bold-price">₱{{record.totalCost.toFixed(2)}}</td>
+          <td align="center">
+            <button class="delete-btn" (click)="fuelService.deleteRecord(record._id)">
+              ✕
+            </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="3" align="center" style="padding: 20px; color: #888;">
+            No history found. Try calculating and saving!
+          </td>
         </tr>
       }
     </tbody>

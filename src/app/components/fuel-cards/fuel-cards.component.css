@@ -18,7 +18,7 @@
   border-top: 1px solid var(--border-color);
 }
 
-/* 2x3 Grid Implementation */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -33,11 +33,11 @@
   background: white;
 }
 
-/* Hover Effect for Cards */
+
 .range-card:hover {
   border-color: var(--accent-black);
   transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 15px rgb(255, 77, 0);
 }
 
 .label {
@@ -71,5 +71,5 @@
 }
 
 @media (max-width: 768px) {
-  .card-grid { grid-template-columns: 1fr 1fr; } /* 2 columns on tablets */
+  .card-grid { grid-template-columns: 1fr 1fr; } 
 }

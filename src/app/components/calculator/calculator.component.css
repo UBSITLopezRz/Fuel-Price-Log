@@ -1,19 +1,64 @@
-.calc-box { background: #000; color: #fff; padding: 40px; }
-.sidebar-title { font-size: 22px; font-weight: 700; margin-bottom: 30px; }
-.field { margin-bottom: 25px; }
-.field label { display: block; font-size: 10px; color: #666; margin-bottom: 8px; font-weight: 700; }
-.field input { width: 100%; background: #111; border: 1px solid #222; color: #fff; padding: 15px; outline: none; }
+.calc-box { 
+  background: #000; 
+  color: #fff; 
+  padding: 40px; 
+}
+
+.sidebar-title { 
+  font-size: 22px; 
+  font-weight: 700; 
+  margin-bottom: 30px; 
+}
+
+.field { 
+  margin-bottom: 25px; 
+}
+
+.field label { 
+  display: block; 
+  font-size: 10px; 
+  color: #666; 
+  margin-bottom: 8px; 
+  font-weight: 700; 
+}
+
+.field input { 
+  width: 100%; 
+  background: #111; 
+  border: 1px solid #222; 
+  color: #fff; 
+  padding: 15px; 
+  outline: none; 
+}
 
 .fuel-select {
   width: 100%;
   padding: 15px;
   background: #fff;
   color: #000;
-  border: 1px solid #e64a19; /* Red border from image_67efe1.png */
+  border: 1px solid #e64a19;
   border-radius: 4px;
   outline: none;
 }
 
-.calc-btn { width: 100%; padding: 18px; background: #fff; color: #000; border: none; font-weight: 700; cursor: pointer; margin-top: 10px; }
-.result { margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
-.price { font-size: 32px; font-weight: 700; }
+.calc-btn { 
+  width: 100%; 
+  padding: 18px; 
+  background: #fff; 
+  color: #000; 
+  border: none; 
+  font-weight: 700; 
+  cursor: pointer; 
+  margin-top: 10px; 
+}
+
+.result { 
+  margin-top: 30px; 
+  border-top: 1px solid #222; 
+  padding-top: 20px; 
+}
+
+.price { 
+  font-size: 32px; 
+  font-weight: 700; 
+}
